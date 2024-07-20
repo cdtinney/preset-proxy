@@ -62,7 +62,7 @@ const server = createServer((req, res) => __awaiter(void 0, void 0, void 0, func
     res.end(image);
 }));
 console.log(`$PORT = ${process.env.PORT}`);
-const hostname = 'localhost';
+const hostname = '0.0.0.0';
 const port = process.env.PORT || 3001;
 server.listen(port, hostname, () => {
     console.log(`preset-proxy running at http://${hostname}:${port}/`);

@@ -64,7 +64,7 @@ const server = createServer(async (req: any, res: any) => {
 
 
 console.log(`$PORT = ${process.env.PORT}`);
-const hostname = 'localhost';
+const hostname = '0.0.0.0';
 const port = process.env.PORT || 3001;
 server.listen(port, hostname, () => {
   console.log(`preset-proxy running at http://${hostname}:${port}/`);
