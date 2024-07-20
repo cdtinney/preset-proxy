@@ -9,7 +9,7 @@
   },
   "scripts": {
     "build": "tsc",
-    "preinstall": "npx puppeteer browsers install chrome",
+    "preinstall": "rm -rf ~/.cache/puppeteer/ && rm -rf node_modules && yarn cache clean && npx puppeteer browsers install chrome",
     "start:ts": "ts-node index.ts",
     "start": "node index.js"
   },
