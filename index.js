@@ -11,7 +11,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 const puppeteer = require('puppeteer');
 const { createServer } = require('node:http');
 const hostname = '127.0.0.1';
-const port = 3000;
+const port = 3001;
 const basePresetUrl = `https://pvme.io/preset-maker/#/`;
 const cachedImages = {
     'id': 'imagebuffer'
@@ -51,6 +51,7 @@ const server = createServer((req, res) => __awaiter(void 0, void 0, void 0, func
     const presetId = url.searchParams.get('id');
     // Ignore all other requests
     if (!presetId) {
+        res.status(404).render('Preset not found');
         return;
     }
     const image = yield getPresetAsImage(presetId);
