@@ -8,6 +8,9 @@
     "ts-node": "^10.9.2"
   },
   "scripts": {
+    "build": "tsc",
+    "preinstall": "npx puppeteer browsers install chrome",
+    "postinstall": "yarn build",
     "start:ts": "ts-node index.ts",
     "start": "node index.js"
   },
