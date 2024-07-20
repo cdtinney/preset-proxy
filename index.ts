@@ -27,6 +27,8 @@ const getPresetAsImage = async () => {
 };
 
 const server = createServer(async (req: any, res: any) => {
+  console.error(req.params);
+  console.error(req.query.id);
   const image = await getPresetAsImage();
   
   res.statusCode = 200;
