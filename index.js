@@ -21,7 +21,9 @@ const getPresetAsImage = (presetId) => __awaiter(void 0, void 0, void 0, functio
         console.info(`Using cached image for preset: ${presetId}`);
         return cachedImages[presetId];
     }
-    const browser = yield puppeteer.launch();
+    const browser = yield puppeteer.launch({
+        args: ['--no-sandbox', '--disable-setuid-sandbox']
+    });
     const page = yield browser.newPage();
     page.setViewport({ width: 1200, height: 700 });
     const presetUrl = `${basePresetUrl}${presetId}`;
