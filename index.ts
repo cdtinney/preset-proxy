@@ -6,7 +6,9 @@ const port = 3000;
 
 const basePresetUrl = `https://pvme.io/preset-maker/#/`;
 
-const cachedImages: Record<string, any> = {};
+const cachedImages: Record<string, any> = {
+  'id': 'imagebuffer'
+};
 
 const getPresetAsImage = async (presetId: string) => {
   if (cachedImages[presetId]) {
