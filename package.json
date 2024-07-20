@@ -9,9 +9,7 @@
   },
   "scripts": {
     "start:ts": "ts-node index.ts",
-    "start": "node index.js",
-    "nginx:restart": "sudo systemctl restart nginx",
-    "nginx:config": "vi /etc/nginx/sites-available/default"
+    "start": "node index.js"
   },
   "dependencies": {
     "node": "^22.5.1",
