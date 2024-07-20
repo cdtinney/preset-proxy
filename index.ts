@@ -26,7 +26,7 @@ const getPresetAsImage = async () => {
   }
 };
 
-const server = createServer(async (req, res) => {
+const server = createServer(async (req: any, res: any) => {
   const image = await getPresetAsImage();
   
   res.statusCode = 200;
