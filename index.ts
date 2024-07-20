@@ -51,7 +51,9 @@ const server = createServer(async (req: any, res: any) => {
   const presetId = url.searchParams.get('id');
   // Ignore all other requests
   if (!presetId) {
-    res.status(404).render('Preset not found');
+    res.writeHead(404, {"Content-Type": "text/html"});
+    res.write('<h1>Preset not found.</h1>');
+    res.end();
     return;
   }
 
