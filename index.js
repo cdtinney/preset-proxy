@@ -10,8 +10,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 const puppeteer = require('puppeteer');
 const { createServer } = require('node:http');
-const hostname = '127.0.0.1';
-const port = process.env.PORT || 3001;
 const basePresetUrl = `https://pvme.io/preset-maker/#/`;
 const cachedImages = {
     'id': 'imagebuffer'
@@ -63,6 +61,9 @@ const server = createServer((req, res) => __awaiter(void 0, void 0, void 0, func
     res.setHeader('Content-Type', `image/jpeg`);
     res.end(image);
 }));
+console.log(`$PORT = ${process.env.PORT}`);
+const hostname = 'localhost';
+const port = process.env.PORT || 3001;
 server.listen(port, hostname, () => {
     console.log(`preset-proxy running at http://${hostname}:${port}/`);
 });
