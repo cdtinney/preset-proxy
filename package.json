@@ -11,12 +11,13 @@
     "build": "tsc",
     "preinstall": "rm -rf ~/.cache/puppeteer/ && rm -rf node_modules && yarn cache clean && npx puppeteer browsers install chrome",
     "postinstall": "node node_modules/puppeteer/install.js",
+    "heroku-postbuild": "mkdir ./.cache && mv /app/.cache/puppeteer ./.cache",
     "start:ts": "ts-node index.ts",
     "start": "node index.js"
   },
   "dependencies": {
     "node": "^22.5.1",
-    "puppeteer": "18.2.1",
+    "puppeteer": "19.0.0",
     "typescript": "^5.5.3"
   },
   "peerDependencies": {
